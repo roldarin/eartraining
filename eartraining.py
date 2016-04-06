@@ -12,19 +12,61 @@ from Tkinter import *
 
 pygame.init()
 
+#default configuration
 #para depurar
 debug = True
-
 #ruta a las notas
 path="./sounds/piano/Piano"
 path_key_notes="./sounds/piano/Piano.ff."
 sformat=".wav"
-
 #base octave
 baseOctave = 2
-
 #base note
 baseNote = 'C'
+
+def read_configuration(configuration_file):
+    #read configuration from configuration file
+    #TODO protection against void fields
+    print "\nReading configuration from " + configuration_file
+    config.read(config_file)
+    baseOctave = int(config.get('General', 'baseOctave'))
+    baseNote = config.get('General', 'baseNote')
+    path = config.get('General', 'pathSounds')
+    sformat = config.get('General', 'baseNote')
+    #load melodic dictation configuration
+    melodic_dictation_length = config.get('Melodic Dictation', 'length')
+    for i in range(20):
+	melodic_dictation_names[i] = config.get('Melodic Dictation', 'name'+str(i+1))
+        melodic_dictation_intervals = [int(inter) for inter in config.get('Melodic Dictation', 'level'+str(i+1)).split()]
+        melodic_dictation_level = [note_sum(baseNote,inter) for inter in melodic_dictation_intervals]
+        melodic_dictation_notes[i]= melodic_dictation_level
+        melodic_dictation_rep = [int(inter) for inter in config.get('Melodic Dictation', 'repetitions'+str(i+1)).split()]
+        melodic_dictation_reps[i]= melodic_dictation_rep[0]
+    #load perfect pitch configuration
+    for i in range(11):
+        perfect_levels_intervals = [int(inter) for inter in config.get('Perfect Pitch', 'level'+str(i+1)).split()]
+        perfect_level = [note_sum(baseNote,inter) for inter in perfect_levels_intervals]
+        perfect_levels_notes[i]= perfect_level
+        perfect_levels_rep = [int(inter) for inter in config.get('Perfect Pitch', 'repetitions'+str(i+1)).split()]
+        perfect_levels_reps[i]= perfect_levels_rep[0]
+    #load intervals recognition configuration
+    for i in range(42):
+
+	#check names
+        if config.get('Intervals recognition', 'name'+str(i+1)) != interval_recognition_names[i]: 
+	    print "Mal names"
+	    print config.get('Intervals recognition', 'name'+str(i+1))
+	    print interval_recognition_names[i]
+	#check reps
+        if int(config.get('Intervals recognition', 'repetitions'+str(i+1)))-int(interval_recognition_reps[i]) != 0: 
+	    print "Mal reps",i+1,config.get('Intervals recognition', 'repetitions'+str(i+1)),interval_recognition_reps[i]
+	interval_recognition_names[i] = config.get('Intervals recognition', 'name'+str(i+1))
+        interval_recognition_reps[i]= int(config.get('Intervals recognition', 'repetitions'+str(i+1)))
+        interval_level_intervals[i] = [int(inter) for inter in config.get('Intervals recognition', 'level'+str(i+1)).split()]
+        #interval_level_level = [note_sum(baseNote,inter) for inter in interval_level_intervals]
+	#print config.get('Intervals recognition', 'level'+str(i+1)), interval_level_level
+        #interval_recognition_notes[i]= interval_level_level
+
 
 def note_sum(note,interval):
 #funcion clave para hacer todo relativo
@@ -235,6 +277,12 @@ def value_quit():
     quit()
     return
 
+def value_test():
+    #for testing
+    level=("-1 -2 -3 -4 -5 -6 -7 -8 -9 -10 -11 -12 -13 -14 -15 -16 -17 -18 -19 -20 -21 -22 -23 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23")
+    print random_interval([int(i) for i in level.split()])
+    return
+
 def clear_notes_played():
     current_state.notes_played[:] = []
     return
@@ -245,17 +293,37 @@ def clear_notes_pressed():
 
 def random_melody(notes,length):
     melody=[]
-    octaves=(baseOctave,baseOctave)
+    octaves=(boct,boct+1)
     for i in range(length):
 	melody.append(random.choice(notes)+str(random.choice(octaves)))
     return melody
 
-def random_interval(notes):
-    interval=[]
-    octaves=(baseOctave,baseOctave)
-    for i in range(2):
-	interval.append(random.choice(notes)+str(random.choice(octaves)))
-    return interval
+def random_interval(interval):
+    interval_notes=[]
+    base_notes = (0,1,2,3,4,5,6,7,8,9,10,11)
+    octaves = (0,12)
+    sel_interval = random.choice(interval)  
+    #the lower and upper note must exit, loop until accomplished
+    while True:
+        sel_base_octave = random.choice(octaves)
+        sel_base_note = random.choice(base_notes) + sel_base_octave
+        if sel_base_note + sel_interval > 24:
+	    sel_base_note -= 12
+        if sel_base_note + sel_interval < -24:
+	    sel_base_note += 12
+        sel_next_note = sel_base_note + sel_interval
+        if sel_base_note >= 0 and sel_base_note <=24:
+	    if sel_next_note >= 0 and sel_next_note <=24: break	 
+    base_note_octave_rel = sel_base_note / 12
+    base_note_octave = str(base_note_octave_rel+baseOctave)
+    base_note = note_sum(baseNote,sel_base_note)+base_note_octave
+    next_note_octave_rel = sel_next_note / 12
+    next_note_octave = str(next_note_octave_rel+baseOctave)
+    next_note = note_sum(baseNote,sel_next_note)+next_note_octave
+    interval_notes.append(base_note)
+    interval_notes.append(next_note)
+    return interval_notes
+
 
 def value_play_melody():
     #melodic dictation code
@@ -351,24 +419,28 @@ def value_play_interval():
     elif current_state.game != 2:
         current_state.game = 2
 	current_state.repetitions_guessed = 0
-	current_state.level
+#TODO OJJJJJJJO current_state.level esta indefined!!! REVISARLOS! y falta check de interval
+	current_state.level = 1
     num2.set("Try!")   
     intensity=('.ff.','.ff.')
     force=random.choice(intensity)
     #check level
-    if current_state.level > 11: current_state.level = 11
-    level_notes = melodic_dictation_notes[current_state.level-1]
-    level_name = melodic_dictation_names[current_state.level-1]
-    current_state.level_rep = melodic_dictation_reps[current_state.level-1]
+    if current_state.level > 42: current_state.level = 42
+    print current_state.level
+    print interval_level_intervals
+    level_name = interval_recognition_names[current_state.level-1]
+    current_state.level_rep = interval_recognition_reps[current_state.level-1]
+    level_intervals = interval_level_intervals[current_state.level-1]
     num0.set(level_name)
     #play new melody, repeat if repetition not guessed ot failed
     num3.set("Hiscore "+str(current_state.repetitions_guessed)+" / "+str(current_state.level_rep))
     if current_state.guessed or len(current_state.notes_played) == 0 and not current_state.failed:
-        if debug: print "new note melodic",melodic_dictation_length,current_state.notes_played
-        interval=random_interval(level_notes)  
+        if debug: print "new note interval recognition",current_state.notes_played
+	print level_intervals 
+        interval=random_interval(level_intervals) 
+	print interval 
         clear_notes_played()
 	clear_notes_pressed()
-	print melody
         for note in interval:
 	    current_state.notes_played.append(note)
 	    force=random.choice(intensity)
@@ -379,7 +451,7 @@ def value_play_interval():
 	current_state.guessed = False
     else:
 #
-        if debug: print "new note melodic REPITE"
+        if debug: print "interval recognition REPITE"
 	for note in current_state.notes_played:
 	    sound = pygame.mixer.Sound(path+force+note+sformat)
 	    sound.play()
@@ -884,30 +956,29 @@ harmonic_dictation_notes = (('C', 'E', 'G'),('C', 'Eb', 'G'),('C', 'E', 'F','G')
 harmonic_dictation_reps = (5,5,5,5,5,7,7,7,7,7,10,10,10,10,10,15,15,15,15,15)
 
 melodic_dictation_length = 2
-melodic_dictation_names = ("Major 1,3,5","Minor 1,3,5","Major 1,3,4,5","Minor 1,3,4,5","Major 1-5","Minor 1-5","Major Pentatonic","Minor Pentatonic", "Major 1-6","Minor 1-6","Blues","Major","Minor","Harmonic Minor","Melodic Minor","Minor, 1 accidental", "Minor, 2 accidental","Minor, 3 accidental","Minor, 4 accidental", "Chromatic")
-melodic_dictation_notes = (('C', 'E', 'G'),('C', 'Eb', 'G'),('C', 'E', 'F','G'),('C', 'Eb', 'F', 'G'),('C', 'D','E', 'F','G'),('C', 'D', 'Eb', 'F', 'G'),('C','D','E', 'G','A'),('C', 'Eb', 'G', 'Ab', 'Bb'),('C', 'D','E', 'F','G','A'),('C', 'D', 'Eb', 'F', 'G','Ab'),('C','Eb', 'F', 'Gb','G','Bb'),('C', 'D','E', 'F','G','B'),('C', 'D', 'Eb', 'F', 'G','Ab','Bb'),('C', 'D', 'Eb', 'F', 'G','Ab','B'),('C', 'D', 'Eb', 'F', 'G','A','B'),('C','D', 'Eb','F', 'G','A','Bb','B'),('C','D', 'Eb','F', 'G','Ab','A','Bb','B'),('C','D', 'Eb','F','Gb', 'G','Bb','A','Bb','B'),('C','D', 'Eb', 'E','F','Gb', 'G','Bb','A','Bb','B'),('C','Db','D', 'Eb', 'E','F','Gb', 'G','Ab','A','Bb','B'))
-melodic_dictation_reps = (5,5,5,5,5,7,7,7,7,7,10,10,10,10,10,15,15,15,15,15)
+melodic_dictation_names = ["Major 1,3,5","Minor 1,3,5","Major 1,3,4,5","Minor 1,3,4,5","Major 1-5","Minor 1-5","Major Pentatonic","Minor Pentatonic", "Major 1-6","Minor 1-6","Blues","Major","Minor","Harmonic Minor","Melodic Minor","Minor, 1 accidental", "Minor, 2 accidental","Minor, 3 accidental","Minor, 4 accidental", "Chromatic"]
+melodic_dictation_notes = [('C', 'E', 'G'),('C', 'Eb', 'G'),('C', 'E', 'F','G'),('C', 'Eb', 'F', 'G'),('C', 'D','E', 'F','G'),('C', 'D', 'Eb', 'F', 'G'),('C','D','E', 'G','A'),('C', 'Eb', 'G', 'Ab', 'Bb'),('C', 'D','E', 'F','G','A'),('C', 'D', 'Eb', 'F', 'G','Ab'),('C','Eb', 'F', 'Gb','G','Bb'),('C', 'D','E', 'F','G','B'),('C', 'D', 'Eb', 'F', 'G','Ab','Bb'),('C', 'D', 'Eb', 'F', 'G','Ab','B'),('C', 'D', 'Eb', 'F', 'G','A','B'),('C','D', 'Eb','F', 'G','A','Bb','B'),('C','D', 'Eb','F', 'G','Ab','A','Bb','B'),('C','D', 'Eb','F','Gb', 'G','Bb','A','Bb','B'),('C','D', 'Eb', 'E','F','Gb', 'G','Bb','A','Bb','B'),('C','Db','D', 'Eb', 'E','F','Gb', 'G','Ab','A','Bb','B')]
+melodic_dictation_reps = [5,5,5,5,5,7,7,7,7,7,10,10,10,10,10,15,15,15,15,15]
 
 
-perfect_levels_reps = (20,20,20,20,25,25,25,25,30,30,30)
-perfect_level1 = (note_sum(baseNote,3),note_sum(baseNote,6))
-perfect_level2 = (note_sum(baseNote,0),note_sum(baseNote,3),note_sum(baseNote,6))
-perfect_level3 = (note_sum(baseNote,0),note_sum(baseNote,3),note_sum(baseNote,6),note_sum(baseNote,9))
-perfect_level4 = (note_sum(baseNote,0),note_sum(baseNote,1),note_sum(baseNote,3),note_sum(baseNote,6),note_sum(baseNote,9))
-perfect_level5 = (note_sum(baseNote,0),note_sum(baseNote,1),note_sum(baseNote,3),note_sum(baseNote,4),note_sum(baseNote,6),note_sum(baseNote,9))
-perfect_level6 = (note_sum(baseNote,0),note_sum(baseNote,1),note_sum(baseNote,3),note_sum(baseNote,4),note_sum(baseNote,6),note_sum(baseNote,7),note_sum(baseNote,9))
-perfect_level7 = (note_sum(baseNote,0),note_sum(baseNote,1),note_sum(baseNote,3),note_sum(baseNote,4),note_sum(baseNote,6),note_sum(baseNote,7),note_sum(baseNote,9),note_sum(baseNote,10))
-perfect_level8 = (note_sum(baseNote,0),note_sum(baseNote,1),note_sum(baseNote,2),note_sum(baseNote,3),note_sum(baseNote,4),note_sum(baseNote,6),note_sum(baseNote,7),note_sum(baseNote,9),note_sum(baseNote,10))
-perfect_level9 = (note_sum(baseNote,0),note_sum(baseNote,1),note_sum(baseNote,2),note_sum(baseNote,3),note_sum(baseNote,4),note_sum(baseNote,5),note_sum(baseNote,6),note_sum(baseNote,7),note_sum(baseNote,9),note_sum(baseNote,10))
-perfect_level10 = (note_sum(baseNote,0),note_sum(baseNote,1),note_sum(baseNote,2),note_sum(baseNote,3),note_sum(baseNote,4),note_sum(baseNote,5),note_sum(baseNote,6),note_sum(baseNote,7),note_sum(baseNote,9),note_sum(baseNote,10),note_sum(baseNote,11))
-perfect_level11 = (note_sum(baseNote,0),note_sum(baseNote,1),note_sum(baseNote,2),note_sum(baseNote,3),note_sum(baseNote,4),note_sum(baseNote,5),note_sum(baseNote,6),note_sum(baseNote,7),note_sum(baseNote,8),note_sum(baseNote,9),note_sum(baseNote,10),note_sum(baseNote,11))
+perfect_levels_reps = [20,20,20,20,25,25,25,25,30,30,30]
+perfect_levels_notes = [None] * 11
+perfect_levels_notes[0] = (note_sum(baseNote,3),note_sum(baseNote,6))
+perfect_levels_notes[1] = (note_sum(baseNote,0),note_sum(baseNote,3),note_sum(baseNote,6))
+perfect_levels_notes[2] = (note_sum(baseNote,0),note_sum(baseNote,3),note_sum(baseNote,6),note_sum(baseNote,9))
+perfect_levels_notes[3] = (note_sum(baseNote,0),note_sum(baseNote,1),note_sum(baseNote,3),note_sum(baseNote,6),note_sum(baseNote,9))
+perfect_levels_notes[4] = (note_sum(baseNote,0),note_sum(baseNote,1),note_sum(baseNote,3),note_sum(baseNote,4),note_sum(baseNote,6),note_sum(baseNote,9))
+perfect_levels_notes[5] = (note_sum(baseNote,0),note_sum(baseNote,1),note_sum(baseNote,3),note_sum(baseNote,4),note_sum(baseNote,6),note_sum(baseNote,7),note_sum(baseNote,9))
+perfect_levels_notes[6] = (note_sum(baseNote,0),note_sum(baseNote,1),note_sum(baseNote,3),note_sum(baseNote,4),note_sum(baseNote,6),note_sum(baseNote,7),note_sum(baseNote,9),note_sum(baseNote,10))
+perfect_levels_notes[7] = (note_sum(baseNote,0),note_sum(baseNote,1),note_sum(baseNote,2),note_sum(baseNote,3),note_sum(baseNote,4),note_sum(baseNote,6),note_sum(baseNote,7),note_sum(baseNote,9),note_sum(baseNote,10))
+perfect_levels_notes[8] = (note_sum(baseNote,0),note_sum(baseNote,1),note_sum(baseNote,2),note_sum(baseNote,3),note_sum(baseNote,4),note_sum(baseNote,5),note_sum(baseNote,6),note_sum(baseNote,7),note_sum(baseNote,9),note_sum(baseNote,10))
+perfect_levels_notes[9] = (note_sum(baseNote,0),note_sum(baseNote,1),note_sum(baseNote,2),note_sum(baseNote,3),note_sum(baseNote,4),note_sum(baseNote,5),note_sum(baseNote,6),note_sum(baseNote,7),note_sum(baseNote,9),note_sum(baseNote,10),note_sum(baseNote,11))
+perfect_levels_notes[10] = (note_sum(baseNote,0),note_sum(baseNote,1),note_sum(baseNote,2),note_sum(baseNote,3),note_sum(baseNote,4),note_sum(baseNote,5),note_sum(baseNote,6),note_sum(baseNote,7),note_sum(baseNote,8),note_sum(baseNote,9),note_sum(baseNote,10),note_sum(baseNote,11))
 
-print perfect_levels_notes
-#TODO hay que hacer los niveles relativos
+interval_recognition_names = ["Ascending seconds","Descending seconds","Seconds","Ascending thirds","Descending thirds","Thirds","Ascending fourths and fifths","Descending fourths and fifths","Fourths and fifths","Ascending sixths","Descending sixths","Sixths","Ascending sevenths","Descending sevenths","Sevenths","Ascending ninths","Descending ninths","Ninths","Ascending sevenths and tritones","Descending sevenths and tritones","Sevenths and tritones","Ascending fourths, fifths and octaves","Descending fourths, fifths and octaves","Fourths, fifths and octaves","Ascending seconds and thirds","Descending seconds and thirds","Seconds and thirds","Ascending sixths and sevenths ","Descending sixths and sevenths","Sixths and sevenths", "Ascending sevenths and ninths","Descending sevenths and ninths","Sevenths and ninths", "Ascending seconds to octave","Descending seconds to octave","Seconds to octave","Ascending seconds to tenth","Descending seconds to tenth","Seconds to tenth","Ascending seconds to 15th","Descending seconds to 15th","Seconds to 15th"]
+interval_level_intervals = [None] * 42
 
-interval_dictation_names = ("Ascending seconds","Descending seconds","Seconds","Ascending thirds","Descending thirds","Thirds","Ascending fourths and fifths","Descending fourths and fifths","Fourths and fifths","Ascending sixths","Descending sixths","Sixths","Ascending sevenths","Descending sevenths","Sevenths","Ascending ninths","Descending ninths","Ninths","Ascending sevenths and tritones","Descending sevenths and tritones","Sevenths and tritones","Ascending fourths, fifths and octaves","Descending fourths, fifths and octaves","Fourths, fifths and octaves","Ascending seconds and thirds","Descending seconds and thirds","Seconds and thirds","Ascending sixths and sevenths ","Descending sixths and sevenths","Sixths and sevenths", "Ascending sevenths and ninths","Descending sevenths and ninths","Sevenths and ninths", "Ascending seconds to octave","Descending seconds to octave","Seconds to octave","Ascending seconds to tenth","Descending seconds to tenth","Seconds to tenth","Ascending seconds to 15th","Descending seconds to 15th","Seconds to 15th")
-interval_levels_notes = ((1, 2),(-1,-2),(-1,-2,1,2))
-interval_levels_reps = (15,15,25,15,15,25,20,20,30,15,15,25,15,15,25,20,20,30,20,20,30,20,20,30,20,20,30,20,20,30,20,20,30,30,30,50,40,40,60,50,50,70)
+interval_recognition_reps = [15,15,25,15,15,25,20,20,30,15,15,25,15,15,25,20,20,30,20,20,30,20,20,30,20,20,30,20,20,30,20,20,30,30,30,50,40,40,60,50,50,70]
 
 #read configuration file
 config = ConfigParser.ConfigParser()
@@ -917,15 +988,9 @@ else:
     config_file = "configuration.ini"
 
 if os.path.isfile(config_file):
-    config.read(config_file)
-    baseOctave = int(config.get('General', 'baseOctave'))
-    baseNote = config.get('General', 'baseNote')
-#perfect_level1 = (note_sum(baseNote,3),note_sum(baseNote,6))
+    read_configuration(config_file)
 else:
     print "\nWarning: No configuration file, using built-in configuration\n"
-
-perfect_levels_notes = (perfect_level1,perfect_level2,perfect_level3,perfect_level4,perfect_level5,
-perfect_level6,perfect_level7,perfect_level8,perfect_level9,perfect_level10,perfect_level11)
 
 txtDisplay0=Entry(frame, textvariable = num0, bd=5, insertwidth=1, font=30, justify='center',width=40)
 txtDisplay0.pack(side=LEFT)
@@ -1203,6 +1268,10 @@ buttonXX = Button(frame1, state=DISABLED, height=4, width=2, padx=0, pady=0, rel
 buttonXX.pack(side=LEFT)
 button_quit = Button(frame1, width=4, height=4, text="QUIT", fg="black",command=value_quit)
 button_quit.pack(side=LEFT)
+
+if debug:
+    button_test = Button(frame1, width=4, height=4, text="TEST", fg="black",command=value_test)
+    button_test.pack(side=LEFT)
 
 root.mainloop()
 
