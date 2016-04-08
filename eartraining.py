@@ -15,172 +15,172 @@ pygame.init()
 def note_sum(note,interval):
 #funcion clave para hacer todo relativo
     if note == 'C':
-	if (interval % 12) == 1: new_note = 'Db'
-	if (interval % 12) == 2: new_note = 'D'
-	if (interval % 12) == 3: new_note = 'Eb'
-	if (interval % 12) == 4: new_note = 'E'
-	if (interval % 12) == 5: new_note = 'F'
-	if (interval % 12) == 6: new_note = 'Gb'
-	if (interval % 12) == 7: new_note = 'G'
-	if (interval % 12) == 8: new_note = 'Ab'
-	if (interval % 12) == 9: new_note = 'A'
-	if (interval % 12) == 10: new_note = 'Bb'
-	if (interval % 12) == 11: new_note = 'B'
-	if (interval % 12) == 0: new_note = 'C'
+        if (interval % 12) == 1: new_note = 'Db'
+        if (interval % 12) == 2: new_note = 'D'
+        if (interval % 12) == 3: new_note = 'Eb'
+        if (interval % 12) == 4: new_note = 'E'
+        if (interval % 12) == 5: new_note = 'F'
+        if (interval % 12) == 6: new_note = 'Gb'
+        if (interval % 12) == 7: new_note = 'G'
+        if (interval % 12) == 8: new_note = 'Ab'
+        if (interval % 12) == 9: new_note = 'A'
+        if (interval % 12) == 10: new_note = 'Bb'
+        if (interval % 12) == 11: new_note = 'B'
+        if (interval % 12) == 0: new_note = 'C'
 
     if note == 'Db':
-	if (interval % 12) == 1: new_note = 'D'
-	if (interval % 12) == 2: new_note = 'Eb'
-	if (interval % 12) == 3: new_note = 'E'
-	if (interval % 12) == 4: new_note = 'F'
-	if (interval % 12) == 5: new_note = 'Gb'
-	if (interval % 12) == 6: new_note = 'G'
-	if (interval % 12) == 7: new_note = 'Gb'
-	if (interval % 12) == 8: new_note = 'A'
-	if (interval % 12) == 9: new_note = 'Bb'
-	if (interval % 12) == 10: new_note = 'B'
-	if (interval % 12) == 11: new_note = 'C'
-	if (interval % 12) == 0: new_note = 'Db'
+        if (interval % 12) == 1: new_note = 'D'
+        if (interval % 12) == 2: new_note = 'Eb'
+        if (interval % 12) == 3: new_note = 'E'
+        if (interval % 12) == 4: new_note = 'F'
+        if (interval % 12) == 5: new_note = 'Gb'
+        if (interval % 12) == 6: new_note = 'G'
+        if (interval % 12) == 7: new_note = 'Gb'
+        if (interval % 12) == 8: new_note = 'A'
+        if (interval % 12) == 9: new_note = 'Bb'
+        if (interval % 12) == 10: new_note = 'B'
+        if (interval % 12) == 11: new_note = 'C'
+        if (interval % 12) == 0: new_note = 'Db'
 
     if note == 'D':
-	if (interval % 12) == 1: new_note = 'Eb'
-	if (interval % 12) == 2: new_note = 'E'
-	if (interval % 12) == 3: new_note = 'F'
-	if (interval % 12) == 4: new_note = 'Gb'
-	if (interval % 12) == 5: new_note = 'G'
-	if (interval % 12) == 6: new_note = 'Ab'
-	if (interval % 12) == 7: new_note = 'A'
-	if (interval % 12) == 8: new_note = 'Bb'
-	if (interval % 12) == 9: new_note = 'B'
-	if (interval % 12) == 10: new_note = 'C'
-	if (interval % 12) == 11: new_note = 'Db'
-	if (interval % 12) == 0: new_note = 'D'
+        if (interval % 12) == 1: new_note = 'Eb'
+        if (interval % 12) == 2: new_note = 'E'
+        if (interval % 12) == 3: new_note = 'F'
+        if (interval % 12) == 4: new_note = 'Gb'
+        if (interval % 12) == 5: new_note = 'G'
+        if (interval % 12) == 6: new_note = 'Ab'
+        if (interval % 12) == 7: new_note = 'A'
+        if (interval % 12) == 8: new_note = 'Bb'
+        if (interval % 12) == 9: new_note = 'B'
+        if (interval % 12) == 10: new_note = 'C'
+        if (interval % 12) == 11: new_note = 'Db'
+        if (interval % 12) == 0: new_note = 'D'
 
     if note == 'Eb':
-	if (interval % 12) == 1: new_note = 'E'
-	if (interval % 12) == 2: new_note = 'F'
-	if (interval % 12) == 3: new_note = 'Gb'
-	if (interval % 12) == 4: new_note = 'G'
-	if (interval % 12) == 5: new_note = 'Ab'
-	if (interval % 12) == 6: new_note = 'A'
-	if (interval % 12) == 7: new_note = 'Bb'
-	if (interval % 12) == 8: new_note = 'B'
-	if (interval % 12) == 9: new_note = 'C'
-	if (interval % 12) == 10: new_note = 'Db'
-	if (interval % 12) == 11: new_note = 'D'
-	if (interval % 12) == 0: new_note = 'Eb'
+        if (interval % 12) == 1: new_note = 'E'
+        if (interval % 12) == 2: new_note = 'F'
+        if (interval % 12) == 3: new_note = 'Gb'
+        if (interval % 12) == 4: new_note = 'G'
+        if (interval % 12) == 5: new_note = 'Ab'
+        if (interval % 12) == 6: new_note = 'A'
+        if (interval % 12) == 7: new_note = 'Bb'
+        if (interval % 12) == 8: new_note = 'B'
+        if (interval % 12) == 9: new_note = 'C'
+        if (interval % 12) == 10: new_note = 'Db'
+        if (interval % 12) == 11: new_note = 'D'
+        if (interval % 12) == 0: new_note = 'Eb'
 
     if note == 'E':
-	if (interval % 12) == 1: new_note = 'F'
-	if (interval % 12) == 2: new_note = 'Gb'
-	if (interval % 12) == 3: new_note = 'G'
-	if (interval % 12) == 4: new_note = 'Ab'
-	if (interval % 12) == 5: new_note = 'A'
-	if (interval % 12) == 6: new_note = 'Bb'
-	if (interval % 12) == 7: new_note = 'B'
-	if (interval % 12) == 8: new_note = 'C'
-	if (interval % 12) == 9: new_note = 'Db'
-	if (interval % 12) == 10: new_note = 'D'
-	if (interval % 12) == 11: new_note = 'Eb'
-	if (interval % 12) == 0: new_note = 'E'
+        if (interval % 12) == 1: new_note = 'F'
+        if (interval % 12) == 2: new_note = 'Gb'
+        if (interval % 12) == 3: new_note = 'G'
+        if (interval % 12) == 4: new_note = 'Ab'
+        if (interval % 12) == 5: new_note = 'A'
+        if (interval % 12) == 6: new_note = 'Bb'
+        if (interval % 12) == 7: new_note = 'B'
+        if (interval % 12) == 8: new_note = 'C'
+        if (interval % 12) == 9: new_note = 'Db'
+        if (interval % 12) == 10: new_note = 'D'
+        if (interval % 12) == 11: new_note = 'Eb'
+        if (interval % 12) == 0: new_note = 'E'
 
     if note == 'F':
-	if (interval % 12) == 1: new_note = 'Gb'
-	if (interval % 12) == 2: new_note = 'G'
-	if (interval % 12) == 3: new_note = 'Ab'
-	if (interval % 12) == 4: new_note = 'A'
-	if (interval % 12) == 5: new_note = 'Bb'
-	if (interval % 12) == 6: new_note = 'B'
-	if (interval % 12) == 7: new_note = 'C'
-	if (interval % 12) == 8: new_note = 'Db'
-	if (interval % 12) == 9: new_note = 'D'
-	if (interval % 12) == 10: new_note = 'Eb'
-	if (interval % 12) == 11: new_note = 'E'
-	if (interval % 12) == 0: new_note = 'F'
+        if (interval % 12) == 1: new_note = 'Gb'
+        if (interval % 12) == 2: new_note = 'G'
+        if (interval % 12) == 3: new_note = 'Ab'
+        if (interval % 12) == 4: new_note = 'A'
+        if (interval % 12) == 5: new_note = 'Bb'
+        if (interval % 12) == 6: new_note = 'B'
+        if (interval % 12) == 7: new_note = 'C'
+        if (interval % 12) == 8: new_note = 'Db'
+        if (interval % 12) == 9: new_note = 'D'
+        if (interval % 12) == 10: new_note = 'Eb'
+        if (interval % 12) == 11: new_note = 'E'
+        if (interval % 12) == 0: new_note = 'F'
 
     if note == 'Gb':
-	if (interval % 12) == 1: new_note = 'G'
-	if (interval % 12) == 2: new_note = 'Ab'
-	if (interval % 12) == 3: new_note = 'A'
-	if (interval % 12) == 4: new_note = 'Bb'
-	if (interval % 12) == 5: new_note = 'B'
-	if (interval % 12) == 6: new_note = 'C'
-	if (interval % 12) == 7: new_note = 'Db'
-	if (interval % 12) == 8: new_note = 'D'
-	if (interval % 12) == 9: new_note = 'Eb'
-	if (interval % 12) == 10: new_note = 'E'
-	if (interval % 12) == 11: new_note = 'F'
-	if (interval % 12) == 0: new_note = 'Gb'
+        if (interval % 12) == 1: new_note = 'G'
+        if (interval % 12) == 2: new_note = 'Ab'
+        if (interval % 12) == 3: new_note = 'A'
+        if (interval % 12) == 4: new_note = 'Bb'
+        if (interval % 12) == 5: new_note = 'B'
+        if (interval % 12) == 6: new_note = 'C'
+        if (interval % 12) == 7: new_note = 'Db'
+        if (interval % 12) == 8: new_note = 'D'
+        if (interval % 12) == 9: new_note = 'Eb'
+        if (interval % 12) == 10: new_note = 'E'
+        if (interval % 12) == 11: new_note = 'F'
+        if (interval % 12) == 0: new_note = 'Gb'
 
     if note == 'G':
-	if (interval % 12) == 1: new_note = 'Ab'
-	if (interval % 12) == 2: new_note = 'A'
-	if (interval % 12) == 3: new_note = 'Bb'
-	if (interval % 12) == 4: new_note = 'B'
-	if (interval % 12) == 5: new_note = 'C'
-	if (interval % 12) == 6: new_note = 'Db'
-	if (interval % 12) == 7: new_note = 'D'
-	if (interval % 12) == 8: new_note = 'Eb'
-	if (interval % 12) == 9: new_note = 'E'
-	if (interval % 12) == 10: new_note = 'F'
-	if (interval % 12) == 11: new_note = 'Gb'
-	if (interval % 12) == 0: new_note = 'G'
+        if (interval % 12) == 1: new_note = 'Ab'
+        if (interval % 12) == 2: new_note = 'A'
+        if (interval % 12) == 3: new_note = 'Bb'
+        if (interval % 12) == 4: new_note = 'B'
+        if (interval % 12) == 5: new_note = 'C'
+        if (interval % 12) == 6: new_note = 'Db'
+        if (interval % 12) == 7: new_note = 'D'
+        if (interval % 12) == 8: new_note = 'Eb'
+        if (interval % 12) == 9: new_note = 'E'
+        if (interval % 12) == 10: new_note = 'F'
+        if (interval % 12) == 11: new_note = 'Gb'
+        if (interval % 12) == 0: new_note = 'G'
 
     if note == 'Ab':
-	if (interval % 12) == 1: new_note = 'A'
-	if (interval % 12) == 2: new_note = 'Bb'
-	if (interval % 12) == 3: new_note = 'B'
-	if (interval % 12) == 4: new_note = 'C'
-	if (interval % 12) == 5: new_note = 'Db'
-	if (interval % 12) == 6: new_note = 'D'
-	if (interval % 12) == 7: new_note = 'Eb'
-	if (interval % 12) == 8: new_note = 'E'
-	if (interval % 12) == 9: new_note = 'F'
-	if (interval % 12) == 10: new_note = 'Gb'
-	if (interval % 12) == 11: new_note = 'G'
-	if (interval % 12) == 0: new_note = 'Ab'
+        if (interval % 12) == 1: new_note = 'A'
+        if (interval % 12) == 2: new_note = 'Bb'
+        if (interval % 12) == 3: new_note = 'B'
+        if (interval % 12) == 4: new_note = 'C'
+        if (interval % 12) == 5: new_note = 'Db'
+        if (interval % 12) == 6: new_note = 'D'
+        if (interval % 12) == 7: new_note = 'Eb'
+        if (interval % 12) == 8: new_note = 'E'
+        if (interval % 12) == 9: new_note = 'F'
+        if (interval % 12) == 10: new_note = 'Gb'
+        if (interval % 12) == 11: new_note = 'G'
+        if (interval % 12) == 0: new_note = 'Ab'
 
     if note == 'A':
-	if (interval % 12) == 1: new_note = 'Bb'
-	if (interval % 12) == 2: new_note = 'B'
-	if (interval % 12) == 3: new_note = 'C'
-	if (interval % 12) == 4: new_note = 'Db'
-	if (interval % 12) == 5: new_note = 'D'
-	if (interval % 12) == 6: new_note = 'Eb'
-	if (interval % 12) == 7: new_note = 'E'
-	if (interval % 12) == 8: new_note = 'F'
-	if (interval % 12) == 9: new_note = 'Gb'
-	if (interval % 12) == 10: new_note = 'G'
-	if (interval % 12) == 11: new_note = 'Ab'
-	if (interval % 12) == 0: new_note = 'A'
+        if (interval % 12) == 1: new_note = 'Bb'
+        if (interval % 12) == 2: new_note = 'B'
+        if (interval % 12) == 3: new_note = 'C'
+        if (interval % 12) == 4: new_note = 'Db'
+        if (interval % 12) == 5: new_note = 'D'
+        if (interval % 12) == 6: new_note = 'Eb'
+        if (interval % 12) == 7: new_note = 'E'
+        if (interval % 12) == 8: new_note = 'F'
+        if (interval % 12) == 9: new_note = 'Gb'
+        if (interval % 12) == 10: new_note = 'G'
+        if (interval % 12) == 11: new_note = 'Ab'
+        if (interval % 12) == 0: new_note = 'A'
 
     if note == 'Bb':
-	if (interval % 12) == 1: new_note = 'B'
-	if (interval % 12) == 2: new_note = 'C'
-	if (interval % 12) == 3: new_note = 'Db'
-	if (interval % 12) == 4: new_note = 'D'
-	if (interval % 12) == 5: new_note = 'Eb'
-	if (interval % 12) == 6: new_note = 'E'
-	if (interval % 12) == 7: new_note = 'F'
-	if (interval % 12) == 8: new_note = 'Gb'
-	if (interval % 12) == 9: new_note = 'G'
-	if (interval % 12) == 10: new_note = 'Ab'
-	if (interval % 12) == 11: new_note = 'A'
-	if (interval % 12) == 0: new_note = 'Bb'
+        if (interval % 12) == 1: new_note = 'B'
+        if (interval % 12) == 2: new_note = 'C'
+        if (interval % 12) == 3: new_note = 'Db'
+        if (interval % 12) == 4: new_note = 'D'
+        if (interval % 12) == 5: new_note = 'Eb'
+        if (interval % 12) == 6: new_note = 'E'
+        if (interval % 12) == 7: new_note = 'F'
+        if (interval % 12) == 8: new_note = 'Gb'
+        if (interval % 12) == 9: new_note = 'G'
+        if (interval % 12) == 10: new_note = 'Ab'
+        if (interval % 12) == 11: new_note = 'A'
+        if (interval % 12) == 0: new_note = 'Bb'
 
     if note == 'B':
-	if (interval % 12) == 1: new_note = 'C'
-	if (interval % 12) == 2: new_note = 'Db'
-	if (interval % 12) == 3: new_note = 'D'
-	if (interval % 12) == 4: new_note = 'Eb'
-	if (interval % 12) == 5: new_note = 'E'
-	if (interval % 12) == 6: new_note = 'F'
-	if (interval % 12) == 7: new_note = 'Gb'
-	if (interval % 12) == 8: new_note = 'G'
-	if (interval % 12) == 9: new_note = 'Ab'
-	if (interval % 12) == 10: new_note = 'A'
-	if (interval % 12) == 11: new_note = 'Bb'
-	if (interval % 12) == 0: new_note = 'B'
+        if (interval % 12) == 1: new_note = 'C'
+        if (interval % 12) == 2: new_note = 'Db'
+        if (interval % 12) == 3: new_note = 'D'
+        if (interval % 12) == 4: new_note = 'Eb'
+        if (interval % 12) == 5: new_note = 'E'
+        if (interval % 12) == 6: new_note = 'F'
+        if (interval % 12) == 7: new_note = 'Gb'
+        if (interval % 12) == 8: new_note = 'G'
+        if (interval % 12) == 9: new_note = 'Ab'
+        if (interval % 12) == 10: new_note = 'A'
+        if (interval % 12) == 11: new_note = 'Bb'
+        if (interval % 12) == 0: new_note = 'B'
  
     return new_note
 
@@ -193,9 +193,9 @@ def key_pressed(interval):
     sound = pygame.mixer.Sound(path_key_notes+note+sformat)
     sound.play()
     if current_state.playing: 
-	check_note(note) 
+        check_note(note) 
     else:
-	display_pressed.set('Played '+note)
+        display_pressed.set('Played '+note)
     return
 
 def value_solve(): 
@@ -209,10 +209,10 @@ def value_save():
     #save hiscores
     now = datetime.datetime.now()
     date = str(now.day)+"/"+str(now.month)+"/"+str(now.year)+"/"+str(now.hour)+":"+str(now.minute).zfill(2)
-    fout1=open("Hiscores_Melodic"+".txt",'a')
-    fout2=open("Hiscores_Perfect"+".txt",'a')
-    fout3=open("Hiscores_Intervals"+".txt",'a')
-    fout4=open("Hiscores_Dictation"+".txt",'a')
+    fout1=open(hiscoresFolder+"/Hiscores_Melodic"+".txt",'a')
+    fout2=open(hiscoresFolder+"/Hiscores_Perfect"+".txt",'a')
+    fout3=open(hiscoresFolder+"/Hiscores_Intervals"+".txt",'a')
+    fout4=open(hiscoresFolder+"/Hiscores_Dictation"+".txt",'a')
     fout1.write(date+" = "+str(melodic_hiscores)+"\n")
     fout2.write(date+" = "+str(perfect_hiscores)+"\n")
     fout3.write(date+" = "+str(intervals_hiscores)+"\n")
@@ -225,20 +225,7 @@ def value_save():
 
 def value_quit():
     #save hiscores and quit
-    now = datetime.datetime.now()
-    date = str(now.day)+"/"+str(now.month)+"/"+str(now.year)+"/"+str(now.hour)+":"+str(now.minute).zfill(2)
-    fout1=open("Hiscores_Melodic"+".txt",'a')
-    fout2=open("Hiscores_Perfect"+".txt",'a')
-    fout3=open("Hiscores_Intervals"+".txt",'a')
-    fout4=open("Hiscores_Dictation"+".txt",'a')
-    fout1.write(date+" = "+str(melodic_hiscores)+"\n")
-    fout2.write(date+" = "+str(perfect_hiscores)+"\n")
-    fout3.write(date+" = "+str(intervals_hiscores)+"\n")
-    fout4.write(date+" = "+str(dictation_hiscores)+"\n")
-    fout1.close()
-    fout2.close()
-    fout3.close()
-    fout4.close()
+    value_save()
     quit()
     return
 
@@ -255,24 +242,28 @@ def value_reset():
     current_state.notes_pressed=[] 
     current_state.last=[]         
     current_state.next=False 
+    display_game.set("GAME SELECTED")
+    display_pressed.set("NOTES PRESSED")
+    display_checking.set("CHECKING")
+    display_hiscore.set("HISCORE")
     return
 
 def value_test():
     #for testing
     if debug:
-	print "esta en true"
+        print "esta en true"
     else:
-	print "esta en false"
+        print "esta en false"
     return
 
 def message_display_pressed(notes_pressed):
     #message to show in the pressed notes display
     display_message = "Pressed"
     if len(notes_pressed) > 1:
-	for n in notes_pressed:
-	    display_message += ' '+n
+        for n in notes_pressed:
+            display_message += ' '+n
     else:
-	    display_message += ' '+notes_pressed[0]
+            display_message += ' '+notes_pressed[0]
     display_pressed.set(display_message)
     return
 
@@ -288,8 +279,18 @@ def clear_notes_pressed():
 def random_melody(notes,length):
     melody=[]
     octaves=(baseOctave,baseOctave+1)
-    for i in range(length):
-	melody.append(random.choice(notes)+str(random.choice(octaves)))
+    #generate first note, and then the other, if no repetitions allowed choose another
+    random_note = random.choice(notes)+str(random.choice(octaves))
+    melody.append(random_note)
+    while True:
+        if length == 1: break
+        new_note = random.choice(notes)+str(random.choice(octaves))
+        if not melodic_repeated_notes:
+            if random_note == new_note: continue
+        melody.append(new_note)
+        random_note = new_note
+        if len(melody) == length: break
+	
     return melody
 
 def random_dictation(intervals,length):
@@ -302,18 +303,22 @@ def random_dictation(intervals,length):
     note = note_sum(baseNote, sel_base_note)
     octave = sel_base_note / 12
     dictation.append(note+str(octave+baseOctave))
-    #select notes, must exist
+    #select notes, must exist and check if repetitions
+    preceding = sel_base_note
     while True:
         sel_rel_octave = random.choice(octaves)
-	sel_inter_note = random.choice(intervals)
-	print sel_base_note, sel_rel_octave, sel_inter_note 
-	rel_interval = sel_base_note + sel_rel_octave + sel_inter_note 
+        sel_inter_note = random.choice(intervals)
+        rel_interval = sel_base_note + sel_rel_octave + sel_inter_note 
         #the notes can be between 0 a 24 semitones from baseOctave
         if (rel_interval > 24) or (rel_interval < 0): continue
-	note = note_sum(baseNote, rel_interval)
-	octave = rel_interval / 12
-	dictation.append(note+str(octave+baseOctave))
-	if len(dictation) == length: break
+        #if no repetitions allowed choince another
+        if not dictation_repeated_notes: 
+            if preceding == rel_interval: continue
+        preceding = rel_interval
+        note = note_sum(baseNote, rel_interval)
+        octave = rel_interval / 12
+        dictation.append(note+str(octave+baseOctave))
+        if len(dictation) == length: break
     return dictation
 
 def random_interval(interval):
@@ -326,12 +331,12 @@ def random_interval(interval):
         sel_base_octave = random.choice(octaves)
         sel_base_note = random.choice(base_notes) + sel_base_octave
         if sel_base_note + sel_interval > 24:
-	    sel_base_note -= 12
+            sel_base_note -= 12
         if sel_base_note + sel_interval < -24:
-	    sel_base_note += 12
+            sel_base_note += 12
         sel_next_note = sel_base_note + sel_interval
         if sel_base_note >= 0 and sel_base_note <=24:
-	    if sel_next_note >= 0 and sel_next_note <=24: break	 
+            if sel_next_note >= 0 and sel_next_note <=24: break 
     base_note_octave_rel = sel_base_note / 12
     base_note_octave = str(base_note_octave_rel+baseOctave)
     base_note = note_sum(baseNote,sel_base_note)+base_note_octave
@@ -346,13 +351,13 @@ def random_interval(interval):
 def value_melodic_dictation():
     #melodic dictation code
     if  current_state.game == -1:
-	current_state.playing = True
+        current_state.playing = True
         current_state.game = 0
-	current_state.repetitions_guessed = 0
+        current_state.repetitions_guessed = 0
     elif current_state.game != 0:
         current_state.game = 0
-	current_state.repetitions_guessed = 0
-	current_state.level = 1
+        current_state.repetitions_guessed = 0
+        current_state.level = 1
     display_checking.set("Try!")   
     intensity=('.ff.','.ff.')
     force=random.choice(intensity)
@@ -368,21 +373,21 @@ def value_melodic_dictation():
         if debug: print "new note melodic",melodic_dictation_length,current_state.notes_played
         melody=random_melody(level_notes,melodic_dictation_length)  
         clear_notes_played()
-	clear_notes_pressed()
-	if debug: print melody
+        clear_notes_pressed()
+        if debug: print melody
         for note in melody:
-	    current_state.notes_played.append(note)
-	    force=random.choice(intensity)
-	    if debug: print path+force+note+".wav"
-	    sound = pygame.mixer.Sound(path+force+note+sformat)
+            current_state.notes_played.append(note)
+            force=random.choice(intensity)
+            if debug: print path+force+note+".wav"
+            sound = pygame.mixer.Sound(path+force+note+sformat)
             sound.play()
             #os.system("mplayer "+path+force+note+sformat)
-	current_state.guessed = False
+        current_state.guessed = False
     else:
         if debug: print "new note melodic REPITE"
-	for note in current_state.notes_played:
-	    sound = pygame.mixer.Sound(path+force+note+sformat)
-	    sound.play()
+        for note in current_state.notes_played:
+            sound = pygame.mixer.Sound(path+force+note+sformat)
+            sound.play()
 
     return
 
@@ -391,13 +396,13 @@ def value_perfect_pitch():
     #perfect pitch code
     #if not playing any mode start
     if  current_state.game == -1:
-	current_state.playing = True
+        current_state.playing = True
         current_state.game = 1
-	current_state.repetitions_guessed = 0
+        current_state.repetitions_guessed = 0
     elif current_state.game != 1:
         current_state.game = 1
-	current_state.repetitions_guessed = 0
-	current_state.level = 1
+        current_state.repetitions_guessed = 0
+        current_state.level = 1
     display_checking.set("Try!")   
     intensity=('.ff.','.ff.')
     force=random.choice(intensity)
@@ -415,42 +420,42 @@ def value_perfect_pitch():
     if current_state.guessed or len(current_state.notes_played) == 0 and not current_state.failed:
         if debug: print "new note"
         clear_notes_played()
-	clear_notes_pressed()
+        clear_notes_pressed()
         current_state.failed = False
     #solo la nota base esta en 3. Generamos una nota diferente a la anterior
-	while True:
-	    note=random.choice(level)
+        while True:
+            note=random.choice(level)
             if note == baseNote:
-	        octave_rel = random.choice((0,1,2))
-	    else:
-	        octave_rel = random.choice((0,1))
-	    octave = baseOctave + octave_rel
+                octave_rel = random.choice((0,1,2))
+            else:
+                octave_rel = random.choice((0,1))
+            octave = baseOctave + octave_rel
             absolute_note = note+str(octave)
- 	    if absolute_note != current_state.last: break
-	current_state.last = absolute_note
+            if absolute_note != current_state.last: break
+        current_state.last = absolute_note
         if debug: print absolute_note
-	sound = pygame.mixer.Sound(path+force+absolute_note+sformat)
-	sound.play()
-	if len(current_state.notes_played) == 0: current_state.notes_played.append(absolute_note)
-	current_state.notes_played[0]=absolute_note
+        sound = pygame.mixer.Sound(path+force+absolute_note+sformat)
+        sound.play()
+        if len(current_state.notes_played) == 0: current_state.notes_played.append(absolute_note)
+        current_state.notes_played[0]=absolute_note
         current_state.guessed = False
     else:
         if debug: print "repeat note"
-	sound = pygame.mixer.Sound(path+force+current_state.notes_played[0]+sformat)
-	sound.play()
+        sound = pygame.mixer.Sound(path+force+current_state.notes_played[0]+sformat)
+        sound.play()
     print current_state.notes_played[0]
     return
 
 def value_interval_recognition():
     #interval code
     if  current_state.game == -1:
-	current_state.playing = True
+        current_state.playing = True
         current_state.game = 2
-	current_state.repetitions_guessed = 0
+        current_state.repetitions_guessed = 0
     elif current_state.game != 2:
         current_state.game = 2
-	current_state.repetitions_guessed = 0
-	current_state.level = 1
+        current_state.repetitions_guessed = 0
+        current_state.level = 1
     display_checking.set("Try!")   
     intensity=('.ff.','.ff.')
     force=random.choice(intensity)
@@ -465,36 +470,36 @@ def value_interval_recognition():
     if current_state.guessed or len(current_state.notes_played) == 0 and not current_state.failed:
         if debug: print "new note interval recognition",current_state.notes_played
         interval=random_interval(level_intervals) 
-	if debug: print interval 
+        if debug: print interval 
         clear_notes_played()
-	clear_notes_pressed()
+        clear_notes_pressed()
         for note in interval:
-	    current_state.notes_played.append(note)
-	    force=random.choice(intensity)
-	    if debug: print path+force+note+".wav"
-	    sound = pygame.mixer.Sound(path+force+note+sformat)
+            current_state.notes_played.append(note)
+            force=random.choice(intensity)
+            if debug: print path+force+note+".wav"
+            sound = pygame.mixer.Sound(path+force+note+sformat)
             sound.play()
             #os.system("mplayer "+path+force+note+sformat)
-	current_state.guessed = False
+        current_state.guessed = False
     else:
 #
         if debug: print "interval recognition REPITE"
-	for note in current_state.notes_played:
-	    sound = pygame.mixer.Sound(path+force+note+sformat)
-	    sound.play()
+        for note in current_state.notes_played:
+            sound = pygame.mixer.Sound(path+force+note+sformat)
+            sound.play()
 
     return
 
 def value_dictation():
     #dictation code
     if  current_state.game == -1:
-	current_state.playing = True
+        current_state.playing = True
         current_state.game = 3
-	current_state.repetitions_guessed = 0
+        current_state.repetitions_guessed = 0
     elif current_state.game != 3:
         current_state.game = 3
-	current_state.repetitions_guessed = 0
-	current_state.level = 1
+        current_state.repetitions_guessed = 0
+        current_state.level = 1
     display_checking.set("Try!")   
     intensity=('.ff.','.ff.')
     force=random.choice(intensity)
@@ -510,21 +515,21 @@ def value_dictation():
         if debug: print "new note dictation",dictation_length,current_state.notes_played
         dictation=random_dictation(level_intervals,dictation_length)  
         clear_notes_played()
-	clear_notes_pressed()
-	if debug: print dictation
+        clear_notes_pressed()
+        if debug: print dictation
         for note in dictation:
-	    current_state.notes_played.append(note)
-	    force=random.choice(intensity)
-	    if debug: print path+force+note+".wav"
-	    sound = pygame.mixer.Sound(path+force+note+sformat)
+            current_state.notes_played.append(note)
+            force=random.choice(intensity)
+            if debug: print path+force+note+".wav"
+            sound = pygame.mixer.Sound(path+force+note+sformat)
             sound.play()
             #os.system("mplayer "+path+force+note+sformat)
-	current_state.guessed = False
+        current_state.guessed = False
     else:
         if debug: print "new note dictation REPITE"
-	for note in current_state.notes_played:
-	    sound = pygame.mixer.Sound(path+force+note+sformat)
-	    sound.play()
+        for note in current_state.notes_played:
+            sound = pygame.mixer.Sound(path+force+note+sformat)
+            sound.play()
 
     return
 
@@ -534,120 +539,119 @@ def check_note(note):
     message_display_pressed(current_state.notes_pressed)
     #melodic dictation code
     if current_state.game == 0:
-	#quit()
         #if phrase not enough continue
-	if len(current_state.notes_pressed) == melodic_dictation_length: 
-	#if level not finished continue
-       	    if current_state.repetitions_guessed < current_state.level_rep:
-	    #if repetitions_guessed
-	       if current_state.notes_played == current_state.notes_pressed:
-		    if debug: print "Melodic dictation guessed",current_state.failed ,current_state.guessed
-		    if not current_state.failed and not current_state.guessed: current_state.repetitions_guessed += 1
-		    current_state.guessed = True
+        if len(current_state.notes_pressed) == melodic_dictation_length: 
+        #if level not finished continue
+            if current_state.repetitions_guessed < current_state.level_rep:
+            #if repetitions_guessed
+               if current_state.notes_played == current_state.notes_pressed:
+                    if debug: print "Melodic dictation guessed",current_state.failed ,current_state.guessed
+                    if not current_state.failed and not current_state.guessed: current_state.repetitions_guessed += 1
+                    current_state.guessed = True
                     current_state.failed = False
-		    clear_notes_pressed()
-	            clear_notes_played()
-		    display_checking.set("Correct!!")
+                    clear_notes_pressed()
+                    clear_notes_played()
+                    display_checking.set("Correct!!")
                     display_hiscore.set("Hiscore "+str(current_state.repetitions_guessed)+" / "+str(current_state.level_rep))
                     if (current_state.repetitions_guessed >= melodic_hiscores[current_state.level-1]): 
-		        melodic_hiscores[current_state.level-1] = current_state.repetitions_guessed
-	       else:
-		    if debug: print "Melodic dictation failed"
-		    if not current_state.guessed: 
-		        current_state.repetitions_guessed = 0
+                        melodic_hiscores[current_state.level-1] = current_state.repetitions_guessed
+               else:
+                    if debug: print "Melodic dictation failed"
+                    if not current_state.guessed: 
+                        current_state.repetitions_guessed = 0
                         display_hiscore.set("Hiscore "+str(current_state.repetitions_guessed)+" / "+str(current_state.level_rep))
-		        current_state.failed = True
-			clear_notes_pressed()		      
+                        current_state.failed = True
+                        clear_notes_pressed()      
             #if level accomplished
-	    if current_state.repetitions_guessed >= current_state.level_rep: 
-	        current_state.level += 1
+            if current_state.repetitions_guessed >= current_state.level_rep: 
+                current_state.level += 1
                 current_state.repetitions_guessed = 0
 
     #perfect pitch code 
     if current_state.game == 1:
-	#if level not finished continue
-	if current_state.repetitions_guessed < current_state.level_rep:
-	    #if repetitions_guessed
-	    if current_state.notes_played[0] == note:
-		if debug: print "Perfect pith repetitions_guessed"
-		if not current_state.failed and not current_state.guessed: current_state.repetitions_guessed += 1
-		current_state.guessed = True
-		display_checking.set("Correct!!")
+        #if level not finished continue
+        if current_state.repetitions_guessed < current_state.level_rep:
+            #if repetitions_guessed
+            if current_state.notes_played[0] == note:
+                if debug: print "Perfect pith repetitions_guessed"
+                if not current_state.failed and not current_state.guessed: current_state.repetitions_guessed += 1
+                current_state.guessed = True
+                display_checking.set("Correct!!")
                 display_hiscore.set("Hiscore "+str(current_state.repetitions_guessed)+" / "+str(current_state.level_rep))
                 if (current_state.repetitions_guessed >= perfect_hiscores[current_state.level-1]): 
-		    perfect_hiscores[current_state.level-1] = current_state.repetitions_guessed
-	    else:
-		if debug: print "Perfect pith failed"
-		if not current_state.guessed: 
-		    current_state.repetitions_guessed = 0
+                    perfect_hiscores[current_state.level-1] = current_state.repetitions_guessed
+            else:
+                if debug: print "Perfect pith failed"
+                if not current_state.guessed: 
+                    current_state.repetitions_guessed = 0
                     display_hiscore.set("Hiscore "+str(current_state.repetitions_guessed)+" / "+str(current_state.level_rep))
-		    current_state.failed = True
-		    clear_notes_pressed()
+                    current_state.failed = True
+                    clear_notes_pressed()
         #if level accomplished
-	if current_state.repetitions_guessed >= current_state.level_rep: 
-	    current_state.level += 1
+        if current_state.repetitions_guessed >= current_state.level_rep: 
+            current_state.level += 1
             current_state.repetitions_guessed = 0
 
     #interval recognition code
     if current_state.game == 2:
         #if phrase not enough continue
-	if len(current_state.notes_pressed) == 2: 
-	#if level not finished continue
-       	    if current_state.repetitions_guessed < current_state.level_rep:
-	    #if repetitions_guessed
-	       if current_state.notes_played == current_state.notes_pressed:
-		    if debug: print "Interval recognition guessed"
-		    if not current_state.failed and not current_state.guessed: current_state.repetitions_guessed += 1
-		    current_state.guessed = True
+        if len(current_state.notes_pressed) == 2: 
+        #if level not finished continue
+            if current_state.repetitions_guessed < current_state.level_rep:
+            #if repetitions_guessed
+               if current_state.notes_played == current_state.notes_pressed:
+                    if debug: print "Interval recognition guessed"
+                    if not current_state.failed and not current_state.guessed: current_state.repetitions_guessed += 1
+                    current_state.guessed = True
                     current_state.failed = False
-		    clear_notes_pressed()
-	            clear_notes_played()
-		    display_checking.set("Correct!!")
+                    clear_notes_pressed()
+                    clear_notes_played()
+                    display_checking.set("Correct!!")
                     display_hiscore.set("Hiscore "+str(current_state.repetitions_guessed)+" / "+str(current_state.level_rep))
                     if (current_state.repetitions_guessed >= intervals_hiscores[current_state.level-1]): 
-		        intervals_hiscores[current_state.level-1] = current_state.repetitions_guessed
-	       else:
-		    if debug: print "Interval recognition failed"
-		    if not current_state.guessed: 
-		        current_state.repetitions_guessed = 0
+                        intervals_hiscores[current_state.level-1] = current_state.repetitions_guessed
+               else:
+                    if debug: print "Interval recognition failed"
+                    if not current_state.guessed: 
+                        current_state.repetitions_guessed = 0
                         display_hiscore.set("Hiscore "+str(current_state.repetitions_guessed)+" / "+str(current_state.level_rep))
-		    	display_checking.set("Incorrect!!")
-		        current_state.failed = True
-			clear_notes_pressed()		      
+                        display_checking.set("Incorrect!!")
+                        current_state.failed = True
+                        clear_notes_pressed()      
             #if level accomplished
-	    if current_state.repetitions_guessed >= current_state.level_rep: 
-	        current_state.level += 1
+            if current_state.repetitions_guessed >= current_state.level_rep: 
+                current_state.level += 1
                 current_state.repetitions_guessed = 0 
 
     #dictation code
     if current_state.game == 3:
         #if phrase not enough continue
-	if len(current_state.notes_pressed) == dictation_length: 
-	#if level not finished continue
-       	    if current_state.repetitions_guessed < current_state.level_rep:
-	    #if repetitions_guessed
-	       if current_state.notes_played == current_state.notes_pressed:
-		    if debug: print "Dictation guessed"
-		    if not current_state.failed and not current_state.guessed: current_state.repetitions_guessed += 1
-		    current_state.guessed = True
+        if len(current_state.notes_pressed) == dictation_length: 
+        #if level not finished continue
+            if current_state.repetitions_guessed < current_state.level_rep:
+            #if repetitions_guessed
+               if current_state.notes_played == current_state.notes_pressed:
+                    if debug: print "Dictation guessed"
+                    if not current_state.failed and not current_state.guessed: current_state.repetitions_guessed += 1
+                    current_state.guessed = True
                     current_state.failed = False
-		    clear_notes_pressed()
-	            clear_notes_played()
-		    display_checking.set("Correct!!")
+                    clear_notes_pressed()
+                    clear_notes_played()
+                    display_checking.set("Correct!!")
                     display_hiscore.set("Hiscore "+str(current_state.repetitions_guessed)+" / "+str(current_state.level_rep))
                     if (current_state.repetitions_guessed >= intervals_hiscores[current_state.level-1]): 
-		        dictation_hiscores[current_state.level-1] = current_state.repetitions_guessed
-	       else:
-		    if debug: print "Dictation failed"
-		    if not current_state.guessed: 
-		        current_state.repetitions_guessed = 0
+                        dictation_hiscores[current_state.level-1] = current_state.repetitions_guessed
+               else:
+                    if debug: print "Dictation failed"
+                    if not current_state.guessed: 
+                        current_state.repetitions_guessed = 0
                         display_hiscore.set("Hiscore "+str(current_state.repetitions_guessed)+" / "+str(current_state.level_rep))
-		    	display_checking.set("Incorrect!!")
-		        current_state.failed = True
-			clear_notes_pressed()		      
+                        display_checking.set("Incorrect!!")
+                        current_state.failed = True
+                        clear_notes_pressed()      
             #if level accomplished
-	    if current_state.repetitions_guessed >= current_state.level_rep: 
-	        current_state.level += 1
+            if current_state.repetitions_guessed >= current_state.level_rep: 
+                current_state.level += 1
                 current_state.repetitions_guessed = 0 
 
     return
@@ -856,10 +860,39 @@ sformat=".wav"
 baseOctave = 2
 #base note
 baseNote = 'C'
+use_synthesizer = False
+hiscoresFolder = "/home/roldan/eartraining/Hiscores"
 
 melodic_dictation_length = 5
+#not allow to repeat the same note
+melodic_repeated_notes = False
 melodic_dictation_names = ["Major 1,3,5","Minor 1,3,5","Major 1,3,4,5","Minor 1,3,4,5","Major 1-5","Minor 1-5","Major Pentatonic","Minor Pentatonic", "Major 1-6","Minor 1-6","Blues","Major","Minor","Harmonic Minor","Melodic Minor","Minor, 1 accidental", "Minor, 2 accidental","Minor, 3 accidental","Minor, 4 accidental", "Chromatic"]
-melodic_dictation_notes = [('C', 'E', 'G'),('C', 'Eb', 'G'),('C', 'E', 'F','G'),('C', 'Eb', 'F', 'G'),('C', 'D','E', 'F','G'),('C', 'D', 'Eb', 'F', 'G'),('C','D','E', 'G','A'),('C', 'Eb', 'G', 'Ab', 'Bb'),('C', 'D','E', 'F','G','A'),('C', 'D', 'Eb', 'F', 'G','Ab'),('C','Eb', 'F', 'Gb','G','Bb'),('C', 'D','E', 'F','G','B'),('C', 'D', 'Eb', 'F', 'G','Ab','Bb'),('C', 'D', 'Eb', 'F', 'G','Ab','B'),('C', 'D', 'Eb', 'F', 'G','A','B'),('C','D', 'Eb','F', 'G','A','Bb','B'),('C','D', 'Eb','F', 'G','Ab','A','Bb','B'),('C','D', 'Eb','F','Gb', 'G','Bb','A','Bb','B'),('C','D', 'Eb', 'E','F','Gb', 'G','Bb','A','Bb','B'),('C','Db','D', 'Eb', 'E','F','Gb', 'G','Ab','A','Bb','B')]
+melodic_level_intervals = [None] * 20
+melodic_level_intervals[0] =  [0, 4, 7]
+melodic_level_intervals[1] =  [0, 3, 7]
+melodic_level_intervals[2] =  [0, 4, 5, 7]
+melodic_level_intervals[3] =  [0, 3, 5, 7]
+melodic_level_intervals[4] =  [0, 2, 4, 5, 7]
+melodic_level_intervals[5] =  [0, 2, 3, 5, 7]
+melodic_level_intervals[6] =  [0, 2, 4, 7, 9]
+melodic_level_intervals[7] =  [0, 3, 7, 8, 10]
+melodic_level_intervals[8] =  [0, 2, 4, 5, 7, 9]
+melodic_level_intervals[9] =  [0, 2, 3, 5, 7, 8]
+melodic_level_intervals[10] =  [0, 3, 5, 6, 7, 10]
+melodic_level_intervals[11] =  [0, 2, 4, 5, 7, 9, 11]
+melodic_level_intervals[12] =  [0, 2, 3, 5, 7, 8, 10]
+melodic_level_intervals[13] =  [0, 2, 3, 5, 7, 8, 11]
+melodic_level_intervals[14] =  [0, 2, 3, 5, 7, 9, 11]
+melodic_level_intervals[15] =  [0, 2, 3, 5, 7, 9, 10, 11]
+melodic_level_intervals[16] =  [0, 2, 3, 5, 7, 8, 9, 10, 11]
+melodic_level_intervals[17] =  [0, 2, 3, 5, 6, 7, 8, 9, 10, 11]
+melodic_level_intervals[18] =  [0, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]
+melodic_level_intervals[19] =  [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]
+melodic_dictation_notes = [None] * 20
+for i in range(20):
+    melodic_dictation_notes[i] = [note_sum(baseNote,inter) for inter in melodic_level_intervals[i]]
+#In C we have the following notes
+#melodic_dictation_notes = [('C', 'E', 'G'),('C', 'Eb', 'G'),('C', 'E', 'F','G'),('C', 'Eb', 'F', 'G'),('C', 'D','E', 'F','G'),('C', 'D', 'Eb', 'F', 'G'),('C','D','E', 'G','A'),('C', 'Eb', 'G', 'Ab', 'Bb'),('C', 'D','E', 'F','G','A'),('C', 'D', 'Eb', 'F', 'G','Ab'),('C','Eb', 'F', 'Gb','G','Bb'),('C', 'D','E', 'F','G','B'),('C', 'D', 'Eb', 'F', 'G','Ab','Bb'),('C', 'D', 'Eb', 'F', 'G','Ab','B'),('C', 'D', 'Eb', 'F', 'G','A','B'),('C','D', 'Eb','F', 'G','A','Bb','B'),('C','D', 'Eb','F', 'G','Ab','A','Bb','B'),('C','D', 'Eb','F','Gb', 'G','Bb','A','Bb','B'),('C','D', 'Eb', 'E','F','Gb', 'G','Bb','A','Bb','B'),('C','Db','D', 'Eb', 'E','F','Gb', 'G','Ab','A','Bb','B')]
 melodic_dictation_reps = [5,5,5,5,5,7,7,7,7,7,10,10,10,10,10,15,15,15,15,15]
 
 
@@ -880,16 +913,75 @@ perfect_levels_notes[10] = (note_sum(baseNote,0),note_sum(baseNote,1),note_sum(b
 interval_recognition_names = ["Ascending seconds","Descending seconds","Seconds","Ascending thirds","Descending thirds","Thirds","Ascending fourths and fifths","Descending fourths and fifths","Fourths and fifths","Ascending sixths","Descending sixths","Sixths","Ascending sevenths","Descending sevenths","Sevenths","Ascending ninths","Descending ninths","Ninths","Ascending sevenths and tritones","Descending sevenths and tritones","Sevenths and tritones","Ascending fourths, fifths and octaves","Descending fourths, fifths and octaves","Fourths, fifths and octaves","Ascending seconds and thirds","Descending seconds and thirds","Seconds and thirds","Ascending sixths and sevenths ","Descending sixths and sevenths","Sixths and sevenths", "Ascending sevenths and ninths","Descending sevenths and ninths","Sevenths and ninths", "Ascending seconds to octave","Descending seconds to octave","Seconds to octave","Ascending seconds to tenth","Descending seconds to tenth","Seconds to tenth","Ascending seconds to 15th","Descending seconds to 15th","Seconds to 15th"]
 interval_level_intervals = [None] * 42
 #TODO completar interval_level_intervals
+interval_level_intervals[0] =  [1, 2]
+interval_level_intervals[1] =  [-1, -2]
+interval_level_intervals[2] =  [-1, -2, 1, 2]
+interval_level_intervals[3] =  [3, 4]
+interval_level_intervals[4] =  [-3, -4]
+interval_level_intervals[5] =  [-3, -4, 3, 4]
+interval_level_intervals[6] =  [5, 6, 7]
+interval_level_intervals[7] =  [-5, -6, -7]
+interval_level_intervals[8] =  [-5, -6, -7, 5, 6, 7]
+interval_level_intervals[9] =  [8, 9]
+interval_level_intervals[10] =  [-8, -9]
+interval_level_intervals[11] =  [-8, -9, 8, 9]
+interval_level_intervals[12] =  [10, 11]
+interval_level_intervals[13] =  [-10, -11]
+interval_level_intervals[14] =  [-10, -11, 10, 11]
+interval_level_intervals[15] =  [13, 14]
+interval_level_intervals[16] =  [-13, -14]
+interval_level_intervals[17] =  [-13, -14, 13, 14]
+interval_level_intervals[18] =  [6, 10, 11]
+interval_level_intervals[19] =  [-6, -10, -11]
+interval_level_intervals[20] =  [-6, -10, -11, 6, 10, 11]
+interval_level_intervals[21] =  [5, 6, 7, 8]
+interval_level_intervals[22] =  [-5, -6, -7, -8]
+interval_level_intervals[23] =  [-5, -6, -7, -8, 5, 6, 7, 8]
+interval_level_intervals[24] =  [1, 2, 3, 4]
+interval_level_intervals[25] =  [-1, -2, -3, -4]
+interval_level_intervals[26] =  [-1, -2, -3, -4, 1, 2, 3, 4]
+interval_level_intervals[27] =  [8, 9, 10, 11]
+interval_level_intervals[28] =  [-8, -9, -10, -11]
+interval_level_intervals[29] =  [-8, -9, -10, -11, 8, 9, 10, 11]
+interval_level_intervals[30] =  [10, 11, 13, 14]
+interval_level_intervals[31] =  [-10, -11, -13, -14]
+interval_level_intervals[32] =  [-10, -11, -13, -14, 10, 11, 13, 14]
+interval_level_intervals[33] =  [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
+interval_level_intervals[34] =  [-1, -2, -3, -4, -5, -6, -7, -8, -9, -10, -11, -12]
+interval_level_intervals[35] =  [-1, -2, -3, -4, -5, -6, -7, -8, -9, -10, -11, -12, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
+interval_level_intervals[36] =  [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16]
+interval_level_intervals[37] =  [-1, -2, -3, -4, -5, -6, -7, -8, -9, -10, -11, -12, -13, -14, -15, -16]
+interval_level_intervals[38] =  [-1, -2, -3, -4, -5, -6, -7, -8, -9, -10, -11, -12, -13, -14, -15, -16, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16]
+interval_level_intervals[39] =  [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23]
+interval_level_intervals[40] =  [-1, -2, -3, -4, -5, -6, -7, -8, -9, -10, -11, -12, -13, -14, -15, -16, -17, -18, -19, -20, -21, -22, -23]
+interval_level_intervals[41] =  [-1, -2, -3, -4, -5, -6, -7, -8, -9, -10, -11, -12, -13, -14, -15, -16, -17, -18, -19, -20, -21, -22, -23, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23]
 interval_recognition_reps = [15,15,25,15,15,25,20,20,30,15,15,25,15,15,25,20,20,30,20,20,30,20,20,30,20,20,30,20,20,30,20,20,30,30,30,50,40,40,60,50,50,70]
 
 dictation_length = 5
+#not allow to repeat the same note
+dictation_notes = False
 dictation_names = ["Major 1,3,5","Minor 1,3,5","Major 1,3,4,5","Minor 1,3,4,5","Major 1-5","Minor 1-5","Major Pentatonic","Minor Pentatonic", "Major 1-6","Minor 1-6","Blues","Major","Minor","Harmonic Minor","Melodic Minor","Minor, 1 accidental", "Minor, 2 accidental","Minor, 3 accidental","Minor, 4 accidental", "Chromatic"]
-dictation_notes = [('C', 'E', 'G'),('C', 'Eb', 'G'),('C', 'E', 'F','G'),('C', 'Eb', 'F', 'G'),('C', 'D','E', 'F','G'),('C', 'D', 'Eb', 'F', 'G'),('C','D','E', 'G','A'),('C', 'Eb', 'G', 'Ab', 'Bb'),('C', 'D','E', 'F','G','A'),('C', 'D', 'Eb', 'F', 'G','Ab'),('C','Eb', 'F', 'Gb','G','Bb'),('C', 'D','E', 'F','G','B'),('C', 'D', 'Eb', 'F', 'G','Ab','Bb'),('C', 'D', 'Eb', 'F', 'G','Ab','B'),('C', 'D', 'Eb', 'F', 'G','A','B'),('C','D', 'Eb','F', 'G','A','Bb','B'),('C','D', 'Eb','F', 'G','Ab','A','Bb','B'),('C','D', 'Eb','F','Gb', 'G','Bb','A','Bb','B'),('C','D', 'Eb', 'E','F','Gb', 'G','Bb','A','Bb','B'),('C','Db','D', 'Eb', 'E','F','Gb', 'G','Ab','A','Bb','B')]
-dictation_level_intervals = [None] * 42
-dictation_level_intervals[0] = (0,4,7)
-dictation_level_intervals[1] = (0,3,7)
-dictation_level_intervals[2] = (0,4,5,7)
-dictation_level_intervals[3] = (0,3,5,7)
+dictation_level_intervals = [None] * 20
+dictation_level_intervals[0] =  [0, 4, 7]
+dictation_level_intervals[1] =  [0, 3, 7]
+dictation_level_intervals[2] =  [0, 4, 5, 7]
+dictation_level_intervals[3] =  [0, 3, 5, 7]
+dictation_level_intervals[4] =  [0, 2, 4, 5, 7]
+dictation_level_intervals[5] =  [0, 2, 3, 5, 7]
+dictation_level_intervals[6] =  [0, 2, 4, 7, 9]
+dictation_level_intervals[7] =  [0, 3, 7, 8, 10]
+dictation_level_intervals[8] =  [0, 2, 4, 5, 7, 9]
+dictation_level_intervals[9] =  [0, 2, 3, 5, 7, 8]
+dictation_level_intervals[10] =  [0, 3, 5, 6, 7, 10]
+dictation_level_intervals[11] =  [0, 2, 4, 5, 7, 9, 11]
+dictation_level_intervals[12] =  [0, 2, 3, 5, 7, 8, 10]
+dictation_level_intervals[13] =  [0, 2, 3, 5, 7, 8, 11]
+dictation_level_intervals[14] =  [0, 2, 3, 5, 7, 9, 11]
+dictation_level_intervals[15] =  [0, 2, 3, 5, 7, 9, 10, 11]
+dictation_level_intervals[16] =  [0, 2, 3, 5, 7, 8, 9, 10, 11]
+dictation_level_intervals[17] =  [0, 2, 3, 5, 6, 7, 8, 9, 10, 11]
+dictation_level_intervals[18] =  [0, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]
+dictation_level_intervals[19] =  [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]
 dictation_reps = [5,5,5,5,5,7,7,7,7,7,10,10,10,10,10,15,15,15,15,15]
 
 #read configuration file
@@ -906,33 +998,38 @@ if os.path.isfile(config_file):
     config.read(config_file)
     baseOctave = int(config.get('General', 'baseOctave'))
     baseNote = config.get('General', 'baseNote')
+    use_synthesizer = config.getboolean('General', 'useSynthesizer')
     path = config.get('General', 'pathSounds')
     sformat = config.get('General', 'soundsFormat')
     debug = config.getboolean('General', 'debug')
+    hiscoresFolder = config.get('General', 'hiscoresFolder')
     #load melodic dictation configuration
     melodic_dictation_length = int(config.get('Melodic Dictation', 'length'))
+    melodic_repeated_notes = config.getboolean('Melodic Dictation','repeated_notes')
     for i in range(20):
-	melodic_dictation_names[i] = config.get('Melodic Dictation', 'name'+str(i+1))
-        melodic_dictation_intervals = [int(inter) for inter in config.get('Melodic Dictation', 'level'+str(i+1)).split()]
-        melodic_dictation_level = [note_sum(baseNote,inter) for inter in melodic_dictation_intervals]
-        melodic_dictation_notes[i]= melodic_dictation_level
+        melodic_dictation_names[i] = config.get('Melodic Dictation', 'name'+str(i+1))
+        melodic_level_intervals[i] = [int(inter) for inter in config.get('Melodic Dictation', 'level'+str(i+1)).split()]
+        melodic_dictation_notes[i] = [note_sum(baseNote,inter) for inter in melodic_level_intervals[i]]
         melodic_dictation_rep = [int(inter) for inter in config.get('Melodic Dictation', 'repetitions'+str(i+1)).split()]
         melodic_dictation_reps[i]= melodic_dictation_rep[0]
     #load perfect pitch configuration
     for i in range(11):
         perfect_levels_intervals = [int(inter) for inter in config.get('Perfect Pitch', 'level'+str(i+1)).split()]
-        perfect_level = [note_sum(baseNote,inter) for inter in perfect_levels_intervals]
-        perfect_levels_notes[i]= perfect_level
+        perfect_levels_notes[i]= [note_sum(baseNote,inter) for inter in perfect_levels_intervals]
         perfect_levels_rep = [int(inter) for inter in config.get('Perfect Pitch', 'repetitions'+str(i+1)).split()]
         perfect_levels_reps[i]= perfect_levels_rep[0]
     #load intervals recognition configuration
     for i in range(42):
-	interval_recognition_names[i] = config.get('Intervals recognition', 'name'+str(i+1))
+        interval_recognition_names[i] = config.get('Intervals recognition', 'name'+str(i+1))
         interval_recognition_reps[i]= int(config.get('Intervals recognition', 'repetitions'+str(i+1)))
         interval_level_intervals[i] = [int(inter) for inter in config.get('Intervals recognition', 'level'+str(i+1)).split()]
-        #interval_level_level = [note_sum(baseNote,inter) for inter in interval_level_intervals]
-	#print config.get('Intervals recognition', 'level'+str(i+1)), interval_level_level
-        #interval_recognition_notes[i]= interval_level_level
+    #load dictation configuration
+    dictation_length = int(config.get('Free Dictation', 'length'))
+    dictation_repeated_notes = config.getboolean('Free Dictation','repeated_notes')
+    for i in range(20):
+        dictation_names[i] = config.get('Free Dictation', 'name'+str(i+1))
+        dictation_reps[i]= int(config.get('Free Dictation', 'repetitions'+str(i+1)))
+        dictation_level_intervals[i] = [int(inter) for inter in config.get('Free Dictation', 'level'+str(i+1)).split()]
 else:
     print "\nWarning: No configuration file, using built-in configuration\n"
 
@@ -953,7 +1050,7 @@ display_pressed.set("NOTES PRESSED")
 display_checking.set("CHECKING")
 display_hiscore.set("HISCORE")
 
-txtDisplay0=Entry(frame_disp0, textvariable = display_game, bd=5, insertwidth=1, font=30, justify='center',width=40)
+txtDisplay0=Entry(frame_disp0, textvariable = display_game, bd=10, insertwidth=1, font=30, justify='center',width=40)
 txtDisplay0.pack(side=LEFT)
 txtDisplay1=Entry(frame_disp0, textvariable = display_hiscore, bd=10, insertwidth=1, font=30, justify='center',width=14)
 txtDisplay1.pack(side=LEFT)
@@ -961,9 +1058,9 @@ txtDisplay1.pack(side=LEFT)
 frame_disp1 = Frame(root)
 frame_disp1.pack(side = TOP)
 
-txtDisplay2=Entry(frame_disp1, textvariable = display_pressed, bd=10, insertwidth=1, font=30, justify='center',width=30)
+txtDisplay2=Entry(frame_disp1, textvariable = display_pressed, bd=5, insertwidth=1, font=30, justify='center',width=40)
 txtDisplay2.pack(side=LEFT)
-txtDisplay3=Entry(frame_disp1, textvariable = display_checking, bd=15, insertwidth=1, font=30, justify='center',width=14)
+txtDisplay3=Entry(frame_disp1, textvariable = display_checking, bd=5, insertwidth=1, font=30, justify='center',width=14)
 txtDisplay3.pack(side=LEFT)
 
 topframe = Frame(root)
