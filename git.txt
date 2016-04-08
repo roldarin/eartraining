@@ -1,0 +1,24 @@
+https://git-scm.com/book/es/v1/Fundamentos-de-Git-Guardando-cambios-en-el-repositorio
+git clone https://github.com/roldarin/eartraining.git
+git status
+git add git.txt
+use "git add <file>..." to update what will be committed
+use "git checkout -- <file>..." to discard changes in working directory
+git diff
+git diff --staged
+git commit -m "Commit"
+ojo para saltarse el add git commit -a -m 'added new benchmarks'
+git rm grit.gemspec
+git mv file_from file_to
+git log
+git commit -m 'initial commit'
+git add forgotten_file
+git commit --amend
+it reset HEAD benchmarks.rb
+git checkout -- benchmarks.rb
+git remote
+git fetch origin
+git push origin master
+git remote show origin
+
+
